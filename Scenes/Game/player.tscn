@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://6aec00fbrfj2"]
 
 [ext_resource type="Script" uid="uid://cjmn3whbfsw0f" path="res://Scenes/Game/player.gd" id="1_lq2ly"]
-[ext_resource type="Texture2D" uid="uid://xkaix7eukdfw" path="res://icon.svg" id="2_sjqwj"]
+[ext_resource type="Texture2D" uid="uid://ba8yej54yu2w2" path="res://Assets/Character/Slime01.png" id="2_lq2ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jfvq"]
-size = Vector2(130, 130)
+size = Vector2(30, 27)
 
 [node name="Player" type="CharacterBody2D" unique_id=839595898]
 script = ExtResource("1_lq2ly")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246767116]
-texture = ExtResource("2_sjqwj")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_lq2ly")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797583049]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_8jfvq")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1116859390]
+collide_with_areas = true
